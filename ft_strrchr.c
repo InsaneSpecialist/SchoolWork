@@ -6,21 +6,11 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:47:01 by disingh           #+#    #+#             */
-/*   Updated: 2025/11/18 15:51:50 by disingh          ###   ########.fr       */
+/*   Updated: 2025/12/03 16:30:30 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -29,14 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == c)
-			break ;
+		if ((unsigned char) s[i] == (unsigned char) c)
+			return ((char *) &s[i]);
 		i--;
 	}
-	if (s[i] == c)
-		return ((char *) &s[i]);
-	else
-		return (0);
+	return (0);
 }
 /*
 #include <stdio.h>

@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: disingh <disingh@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 18:37:00 by disingh           #+#    #+#             */
-/*   Updated: 2025/12/04 21:47:44 by disingh          ###   ########.fr       */
+/*   Created: 2025/11/27 07:41:33 by disingh           #+#    #+#             */
+/*   Updated: 2025/11/27 23:43:56 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
 		i++;
-	return (i);
+	}
 }
 /*
-#include <stdio.h>
-#include <string.h>
-
 int	main (void)
 {
-	char	c[] = "";
-	int		a = strlen(c);
-	int		b = ft_strlen(c);
-	printf ("%s:\nstrlen = %d\nft_strlen = %d", c, a, b);
+	char	c[] = "Hello World";
+
+	ft_putstr_fd(c, 1);
 	return (0);
 }
 */

@@ -6,11 +6,11 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 21:44:02 by disingh           #+#    #+#             */
-/*   Updated: 2025/11/14 22:23:22 by disingh          ###   ########.fr       */
+/*   Updated: 2025/12/04 21:26:24 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -18,6 +18,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*s;
 	size_t			i;
 
+	if (!dest && !src)
+		return (NULL);
+	if (dest == src)
+		return (dest);
 	d = (unsigned char *) dest;
 	s = (unsigned char *) src;
 	i = 0;
@@ -46,7 +50,7 @@ int	main(void)
 	ft_memcpy(e, c, 3);
 	memcpy(j, i, 12);
 	ft_memcpy(k, i, 12);
-	printf("For Hello:\nmemcpy = %s\nft_memcpy = %s\n\n", d, e);
+	printf("For %s:\nmemcpy = %s\nft_memcpy = %s\n\n", c, d, e);
 	printf("For 1, 2, 3, 4, 5:\nmemcpy =");
 	while (l < 3)
 		printf("%d, ", j[l++]);
@@ -54,6 +58,7 @@ int	main(void)
 	printf("\nft_memcpy = ");
 	while (l < 3)
 		printf("%d, ", k[l++]);
+	ft_memcpy(((void*)0), ((void*)0), 3);
 	return (0);
 }
 */

@@ -6,14 +6,16 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:45:21 by disingh           #+#    #+#             */
-/*   Updated: 2025/11/14 18:27:01 by disingh          ###   ########.fr       */
+/*   Updated: 2025/11/27 22:52:56 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (2048);
+		return (1);
 	else
 		return (0);
 }

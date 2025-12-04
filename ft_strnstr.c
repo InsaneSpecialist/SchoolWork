@@ -6,22 +6,11 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:47:30 by disingh           #+#    #+#             */
-/*   Updated: 2025/11/18 18:43:32 by disingh          ###   ########.fr       */
+/*   Updated: 2025/12/04 22:18:19 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-//#include <stdio.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 int	ft_checkstring(const char *big, const char *little, int i)
 {
@@ -35,20 +24,21 @@ int	ft_checkstring(const char *big, const char *little, int i)
 		i++;
 		j++;
 	}
-	if (little[j] == '\0')
-		return (1);
-	else
-		return (0);
+	return (1);
 }
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	sizeof_little;
+	size_t	i;
+	size_t	sizeof_little;
 
+	if (little[0] == '\0')
+		return ((char *) big);
 	i = 0;
+	if (len == 0)
+		return ((char *) big);
 	sizeof_little = ft_strlen(little);
-	while (big[i] != '\0' && i < (int) len - (sizeof_little - 1))
+	while (big[i] != '\0' && i <= (len - sizeof_little))
 	{
 		if (big[i] == little[0])
 		{
@@ -60,13 +50,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (0);
 }
 /*
-#include <string.h>
+#include <bsd/string.h>
+#include <stdio.h>
 
 int	main(void)
 {
 	char	*c1 = "Does Form always follow Function?";
-	char	*c2 = "always";
-	int		l = 160;
+	char	*c2 = "";
+	int		l = 16;
 	char	*s1 = strnstr(c1, c2, l);
 	char	*s2 = ft_strnstr(c1, c2, l);
 	printf ("BIG = %s\nLITTLE = %s\nLEN = %d\n\n",c1, c2, l);

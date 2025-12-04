@@ -6,15 +6,15 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 19:20:42 by disingh           #+#    #+#             */
-/*   Updated: 2025/11/14 21:22:11 by disingh          ###   ########.fr       */
+/*   Updated: 2025/11/28 01:16:29 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*a;
 
 	a = (unsigned char *) s;

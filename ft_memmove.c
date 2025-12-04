@@ -6,11 +6,11 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 22:34:21 by disingh           #+#    #+#             */
-/*   Updated: 2025/11/14 23:08:44 by disingh          ###   ########.fr       */
+/*   Updated: 2025/11/27 23:06:47 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
