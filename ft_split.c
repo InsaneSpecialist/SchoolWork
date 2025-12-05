@@ -6,7 +6,7 @@
 /*   By: disingh <disingh@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 20:21:53 by disingh           #+#    #+#             */
-/*   Updated: 2025/12/04 22:42:52 by disingh          ###   ########.fr       */
+/*   Updated: 2025/12/05 16:16:06 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 
 	if (!s)
+		return (NULL);
+	if (ft_split_count(s, c) == 0)
 		return (NULL);
 	arr = ft_calloc(ft_split_count(s, c) + 1, sizeof (char *));
 	if (!arr)

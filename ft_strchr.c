@@ -6,7 +6,7 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:15:20 by disingh           #+#    #+#             */
-/*   Updated: 2025/12/04 21:48:00 by disingh          ###   ########.fr       */
+/*   Updated: 2025/12/05 16:01:34 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if ((unsigned char) s[i] == (unsigned char) c)
 			return ((char *) &s[i]);
 		i++;
 	}

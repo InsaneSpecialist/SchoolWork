@@ -6,7 +6,7 @@
 /*   By: disingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:47:30 by disingh           #+#    #+#             */
-/*   Updated: 2025/12/04 22:18:19 by disingh          ###   ########.fr       */
+/*   Updated: 2025/12/05 16:02:28 by disingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *) big);
 	i = 0;
 	if (len == 0)
-		return ((char *) big);
+		return (NULL);
 	sizeof_little = ft_strlen(little);
 	while (big[i] != '\0' && i <= (len - sizeof_little))
 	{
